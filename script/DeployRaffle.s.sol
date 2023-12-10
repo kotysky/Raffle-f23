@@ -17,6 +17,10 @@ contract DeployRaffle is Script {
             uint32 callbackGasLimit
         ) = helperConfig.activeNetworkConfig(); // pass all the parameters to each variablefrom the helperConfig contract
 
+        if (subscriptionId == 0) {
+            //create a subcription
+        }
+
         vm.startBroadcast();
         Raffle raffle = new Raffle(
             entranceFee,
